@@ -1,5 +1,256 @@
 @import url('https://fonts.googleapis.com/css2?family=League+Spartan:wght@300;400;500;600;700&display=swap');
 
+/*THEME 1*/
+$theme1-background: hsl(222, 26%, 31%);
+$theme1-sub-background: hsl(223, 31%, 20%);
+$theme1-screen-background: hsl(224, 36%, 15%);
+$theme1-delete-key-background: hsl(225, 21%, 49%);
+$theme1-delete-key-shadow: hsl(224, 28%, 35%);
+$theme1-equal-btn-background: hsl(6, 63%, 50%);
+$theme1-equal-btn-shadow: hsl(6, 70%, 34%);
+$theme1-key-background: hsl(30, 25%, 89%);
+$theme1-key-shadow:hsl(28, 16%, 65%);
+$theme1-key-color: hsl(221, 14%, 31%);
+
+/*THEME 2*/
+
+$theme2-background: hsl(0, 0%, 90%);
+$theme2-sub-background: hsl(0, 5%, 81%);
+$theme2-screen-background: hsl(0, 0%, 93%);
+$theme2-delete-key-background: hsl(185, 42%, 37%);
+$theme2-delete-key-shadow: hsl(185, 58%, 25%);
+$theme2-equal-btn-background: hsl(25, 98%, 40%);
+$theme2-equal-btn-shadow: hsl(25, 99%, 27%);
+$theme2-key-background: hsl(45, 7%, 89%);
+$theme2-key-shadow: hsl(35, 11%, 61%);
+$theme2-key-color: hsl(60, 10%, 19%);
+
+/* THEME 3*/
+
+$theme3-background: hsl(268, 75%, 9%);
+$theme3-sub-background: hsl(268, 71%, 12%);
+$theme3-delete-key-background: hsl(281, 89%, 26%);
+$theme3-delete-key-shadow: hsl(285, 91%, 52%);
+$theme3-equal-btn-background: hsl(176, 100%, 44%);
+$theme3-equal-btn-shadow: hsl(177, 92%, 70%);
+$theme3-key-background: hsl(268, 47%, 21%);
+$theme3-key-shadow: hsl(290, 70%, 36%);
+$theme3-key-color: hsl(52, 100%, 62%);
+$theme3-equal-key-color: hsl(198, 20%, 13%);
+
+*{
+    padding:0;
+    margin:0;
+    box-sizing: border-box;
+}
+
 body{
     font-family: 'League Spartan', sans-serif;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+}
+body.theme1{
+    background-color: $theme1-background;
+    color:#fff;
+    .calculator-display{
+        background-color: $theme1-screen-background;
+    }
+    .calculator-keys{
+        background-color: $theme1-sub-background;
+        .key{
+            background-color: $theme1-key-background;
+            color:$theme1-key-color;
+            box-shadow: 0 5px 0 0 $theme1-key-shadow;
+        }
+        .equal{
+            background-color: $theme1-equal-btn-background;
+            color:#fff;
+            box-shadow: 0 5px 0 0 $theme1-equal-btn-shadow;
+        }
+        .delete, .reset{
+            background-color: $theme1-delete-key-background;
+            color:#fff;
+            box-shadow: 0 5px 0 0 $theme1-delete-key-shadow;
+        }
+    }
+}
+
+body.theme2{
+    background-color: $theme2-background;
+    color:$theme2-key-color;
+    .calculator-display{
+        background-color: $theme2-screen-background;
+    }
+    .calculator-keys{
+        background-color: $theme2-sub-background;
+        .key{
+            background-color: $theme2-key-background;
+            color:$theme2-key-color;
+            box-shadow: 0 5px 0 0 $theme2-key-shadow;
+        }
+        .equal{
+            background-color: $theme2-equal-btn-background;
+            color:#fff;
+            box-shadow: 0 5px 0 0 $theme2-equal-btn-shadow;
+        }
+        .delete, .reset{
+            background-color: $theme2-delete-key-background;
+            color:#fff;
+            box-shadow: 0 5px 0 0 $theme2-delete-key-shadow;
+        }
+    }
+}
+
+body.theme3{
+    background-color: $theme3-background;
+    color:$theme3-key-color;
+    .calculator-display{
+        background-color: $theme3-sub-background;
+    }
+    .calculator-keys{
+        background-color: $theme3-sub-background;
+        .key{
+            background-color: $theme3-key-background;
+            color:$theme3-key-color;
+            box-shadow: 0 5px 0 0 $theme3-key-shadow;
+        }
+        .equal{
+            background-color: $theme3-equal-btn-background;
+            color:$theme3-equal-key-color;
+            box-shadow: 0 5px 0 0 $theme3-equal-btn-shadow;
+        }
+        .delete, .reset{
+            background-color: $theme3-delete-key-background;
+            color:#fff;
+            box-shadow: 0 5px 0 0 $theme3-delete-key-shadow;
+        }
+    }
+}
+
+.container{
+    width:100%;
+    padding:1.5rem;
+    max-width:500px;
+}
+
+.top-part{
+    div:first-of-type{
+        display:flex;
+        justify-content: space-between;
+        margin-bottom:1.8rem;
+    }
+}
+.calculator-display{
+    width:100%;
+    height: 7rem;
+    border-radius: 10px;
+    margin-bottom:1.5rem;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-end;
+   //justify-content: flex-end;
+   justify-content: space-between;
+    padding:0.8rem;
+    font-size: 2rem;
+    font-weight: 600;
+    .prev-value{
+        font-size:1.2rem;
+    }
+}
+
+.calculator-keys{
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    padding:1.5rem;
+    border-radius: 10px;
+    gap:1rem;
+    font-weight: 700;
+    .digit{
+        font-size:32px;
+    }
+    .key{
+        height: 55px;
+        border-radius: 5px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        cursor: pointer;
+        &:active{
+            transform: scale(0.98);
+        }
+    }
+    [data-value="7"]{
+        grid-column: 1;
+        grid-row: 1;
+    }
+    [data-value="8"]{
+        grid-column: 2;
+        grid-row: 1;
+    }
+    [data-value="9"]{
+        grid-column: 3;
+        grid-row: 1;
+    }
+    .delete{
+        grid-column: 4;
+        grid-row: 1;
+    }
+    [data-value="4"]{
+        grid-column: 1;
+        grid-row: 2;
+    }
+    [data-value="5"]{
+        grid-column: 2;
+        grid-row: 2;
+    }
+    [data-value="6"]{
+        grid-column: 3;
+        grid-row: 2;
+    }
+    [data-value="+"]{
+        grid-column: 4;
+        grid-row: 2;
+    }
+    [data-value="1"]{
+        grid-column: 1;
+        grid-row: 3;
+    }
+    [data-value="2"]{
+        grid-column: 2;
+        grid-row: 3;
+    }
+    [data-value="3"]{
+        grid-column: 3;
+        grid-row: 3;
+    }
+    [data-value="-"]{
+        grid-column: 4;
+        grid-row: 3;
+    }
+    [data-value="."]{
+        grid-column: 1;
+        grid-row: 4;
+    }
+    [data-value="0"]{
+        grid-column: 2;
+        grid-row: 4;
+    }
+    [data-value="/"]{
+        grid-column: 3;
+        grid-row: 4;
+    }
+    [data-value="x"]{
+        grid-column: 4;
+        grid-row: 4;
+    }
+    .reset{
+        grid-column: 1/3;
+        grid-row: 5;
+    }
+    .equal{
+        grid-column: 3/5;
+        grid-row: 5;
+    }
 }
