@@ -18,7 +18,6 @@ interface isKey {
 let prevKey:isKey;
 let prevOperator:string;
 
-
 calcKeys.forEach((key)=>{
     key.addEventListener('click', (e:Event)=>{
         const key = e.target as HTMLDivElement;
@@ -52,6 +51,9 @@ calcKeys.forEach((key)=>{
             }else{
                 if (prevKey && prevKey.type == "operator"){
                     displayValue=""
+                }
+                if((currentDisplay.getBoundingClientRect().width > calcDisplay.getBoundingClientRect().width - 35) || displayValue.length> 15){
+                    return
                 }
                 displayValue += value;
                 currentDisplay.innerHTML =  displayValue;

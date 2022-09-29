@@ -48,6 +48,9 @@ calcKeys.forEach((key) => {
                 if (prevKey && prevKey.type == "operator") {
                     displayValue = "";
                 }
+                if ((currentDisplay.getBoundingClientRect().width > calcDisplay.getBoundingClientRect().width - 35) || displayValue.length > 15) {
+                    return;
+                }
                 displayValue += value;
                 currentDisplay.innerHTML = displayValue;
                 prevKey = { type: "digit", value: value };
