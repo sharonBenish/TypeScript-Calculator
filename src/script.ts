@@ -55,6 +55,9 @@ calcKeys.forEach((key)=>{
                 if((currentDisplay.getBoundingClientRect().width > calcDisplay.getBoundingClientRect().width - 35) || displayValue.length> 16){
                     return
                 }
+                if(prevKey && prevKey.type == "equal"){
+                    variables = [];
+                }
                 displayValue += value;
                 currentDisplay.innerHTML =  displayValue;
                 prevKey = {type:"digit", value: value};
