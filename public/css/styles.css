@@ -14,6 +14,7 @@ body {
   justify-content: center;
   align-items: center;
   height: 100vh;
+  transition: all 0.2s ease;
 }
 
 body.theme1 {
@@ -242,6 +243,10 @@ body.theme3 .theme-toggle .radios input:checked + .custom-radio {
   align-items: flex-end !important;
   gap: 10px;
 }
+.theme-toggle p, .theme-toggle label {
+  font-weight: 600;
+  padding-bottom: 3px;
+}
 .theme-toggle > div {
   display: block !important;
   position: relative;
@@ -275,4 +280,5 @@ body.theme3 .theme-toggle .radios input:checked + .custom-radio {
   top: 0px;
   border-radius: 50%;
   background: transparent;
+  transition: background 0.35s ease;
 }

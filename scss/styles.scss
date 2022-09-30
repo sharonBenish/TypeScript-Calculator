@@ -50,6 +50,7 @@ body{
     justify-content: center;
     align-items: center;
     height: 100vh;
+    transition: all 0.2s ease;
 }
 body.theme1{
     background-color: $theme1-background;
@@ -284,7 +285,10 @@ body.theme3{
     display: flex;
     align-items: flex-end!important;
     gap:10px;
-    //margin-bottom: 0.8rem;
+    p, label{
+        font-weight: 600;
+        padding-bottom: 3px;
+    }
     >div{
         display: block!important;
         position: relative;
@@ -317,6 +321,7 @@ body.theme3{
             top:0px;
             border-radius: 50%;
             background: transparent;
+            transition: background 0.35s ease;
         }
     }
     
