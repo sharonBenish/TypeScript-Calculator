@@ -20,6 +20,12 @@ body.theme1 {
   background-color: hsl(222deg, 26%, 31%);
   color: #fff;
 }
+body.theme1 .theme-toggle .radios {
+  background-color: hsl(223deg, 31%, 20%);
+}
+body.theme1 .theme-toggle .radios input:checked + .custom-radio {
+  background: hsl(6deg, 63%, 50%);
+}
 body.theme1 .calculator-display {
   background-color: hsl(224deg, 36%, 15%);
 }
@@ -67,6 +73,12 @@ body.theme2 .calculator-keys .delete, body.theme2 .calculator-keys .reset {
   color: #fff;
   box-shadow: 0 5px 0 0 hsl(185deg, 58%, 25%);
 }
+body.theme2 .theme-toggle .radios {
+  background-color: hsl(0deg, 5%, 81%);
+}
+body.theme2 .theme-toggle .radios input:checked + .custom-radio {
+  background: hsl(25deg, 98%, 40%);
+}
 
 body.theme3 {
   background-color: hsl(268deg, 75%, 9%);
@@ -93,6 +105,12 @@ body.theme3 .calculator-keys .delete, body.theme3 .calculator-keys .reset {
   color: #fff;
   box-shadow: 0 5px 0 0 hsl(285deg, 91%, 52%);
 }
+body.theme3 .theme-toggle .radios {
+  background-color: hsl(268deg, 71%, 12%);
+}
+body.theme3 .theme-toggle .radios input:checked + .custom-radio {
+  background: hsl(176deg, 100%, 44%);
+}
 
 .container {
   width: 100%;
@@ -100,10 +118,11 @@ body.theme3 .calculator-keys .delete, body.theme3 .calculator-keys .reset {
   max-width: 500px;
 }
 
-.top-part div:first-of-type {
+.top-part > div:first-of-type {
   display: flex;
   justify-content: space-between;
   margin-bottom: 1.8rem;
+  align-items: flex-end;
 }
 
 .calculator-display {
@@ -216,4 +235,44 @@ body.theme3 .calculator-keys .delete, body.theme3 .calculator-keys .reset {
 .calculator-keys .equal {
   grid-column: 3/5;
   grid-row: 5;
+}
+
+.theme-toggle {
+  display: flex;
+  align-items: flex-end !important;
+  gap: 10px;
+}
+.theme-toggle > div {
+  display: block !important;
+  position: relative;
+}
+.theme-toggle .labels {
+  display: flex;
+  justify-content: space-between;
+  padding: 0 1rem;
+}
+.theme-toggle .radios {
+  padding: 0.5rem 1rem;
+  border-radius: 2rem;
+  display: flex;
+  justify-content: space-between;
+  gap: 10px;
+}
+.theme-toggle label, .theme-toggle input {
+  cursor: pointer;
+}
+.theme-toggle .radio {
+  position: relative;
+}
+.theme-toggle .radio input {
+  opacity: 0;
+}
+.theme-toggle .radio .custom-radio {
+  width: 13px;
+  height: 13px;
+  display: block;
+  position: absolute;
+  top: 0px;
+  border-radius: 50%;
+  background: transparent;
 }

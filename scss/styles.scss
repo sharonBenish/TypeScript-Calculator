@@ -54,6 +54,14 @@ body{
 body.theme1{
     background-color: $theme1-background;
     color:#fff;
+    .theme-toggle{
+        .radios{
+            background-color: $theme1-sub-background;
+            input:checked + .custom-radio{
+                background: $theme1-equal-btn-background;
+            }
+        }
+    }
     .calculator-display{
         background-color: $theme1-screen-background;
     }
@@ -101,6 +109,14 @@ body.theme2{
             box-shadow: 0 5px 0 0 $theme2-delete-key-shadow;
         }
     }
+    .theme-toggle{
+        .radios{
+            background-color: $theme2-sub-background;
+            input:checked + .custom-radio{
+                background: $theme2-equal-btn-background;
+            }
+        }
+    }
 }
 
 body.theme3{
@@ -127,6 +143,14 @@ body.theme3{
             box-shadow: 0 5px 0 0 $theme3-delete-key-shadow;
         }
     }
+    .theme-toggle{
+        .radios{
+            background-color: $theme3-sub-background;
+            input:checked + .custom-radio{
+                background: $theme3-equal-btn-background;
+            }
+        }
+    }
 }
 
 .container{
@@ -136,10 +160,11 @@ body.theme3{
 }
 
 .top-part{
-    div:first-of-type{
+    >div:first-of-type{
         display:flex;
         justify-content: space-between;
         margin-bottom:1.8rem;
+        align-items: flex-end;
     }
 }
 .calculator-display{
@@ -253,4 +278,46 @@ body.theme3{
         grid-column: 3/5;
         grid-row: 5;
     }
+}
+
+.theme-toggle{
+    display: flex;
+    align-items: flex-end!important;
+    gap:10px;
+    //margin-bottom: 0.8rem;
+    >div{
+        display: block!important;
+        position: relative;
+    }
+    .labels{
+        display: flex;
+        justify-content: space-between;
+        padding: 0 1rem;
+    }
+    .radios{
+       padding:0.5rem 1rem;
+       border-radius: 2rem;
+       display: flex;
+       justify-content: space-between;
+       gap:10px;
+    }
+    label,input{
+        cursor: pointer;
+    }
+    .radio{
+        position: relative;
+        input{
+            opacity: 0;
+        }
+        .custom-radio{
+            width:13px;
+            height: 13px;
+            display: block;
+            position: absolute;
+            top:0px;
+            border-radius: 50%;
+            background: transparent;
+        }
+    }
+    
 }

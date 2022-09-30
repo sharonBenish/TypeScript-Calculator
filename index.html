@@ -13,7 +13,30 @@
             <div class="top-part">
                 <div>
                     <h2>calc</h2>
-                    <div class="theme-toggle"></div>
+                    <div class="theme-toggle">
+                        <p>THEME</p>
+                        <div>
+                            <div class="labels">
+                                <label for="theme1">1</label>
+                                <label for="theme2">2</label>
+                                <label for="theme3">3</label>
+                            </div>
+                            <div class="radios">
+                                <div class="radio">
+                                    <input type="radio" name="theme" id="theme1" checked>
+                                    <label for="theme1" class="custom-radio"></label>
+                                </div>
+                                <div class="radio">
+                                    <input type="radio" name="theme" id="theme2">
+                                    <label for="theme2" class="custom-radio"></label>
+                                </div>
+                                <div class="radio">
+                                    <input type="radio" name="theme" id="theme3">
+                                    <label for="theme3" class="custom-radio"></label>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
                 </div>
                 <div class="calculator-display">
                     <div class="prev-value"></div>
@@ -43,5 +66,6 @@
         </main>
     </div>
     <script src="./public/script.js"></script>
+    <script src="./public/theme.js"></script>
 </body>
 </html>
