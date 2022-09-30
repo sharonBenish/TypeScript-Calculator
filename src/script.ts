@@ -89,6 +89,10 @@ delBtn.addEventListener('click', ()=>{
     }
     displayValue = displayValue.substring(0, displayValue.length - 1);
     currentDisplay.innerHTML = displayValue;
+    if (prevKey.type =="equal"){
+        console.log(variables)
+        variables[0] = Number(displayValue);
+    }
 })
 
 //FUNCTIONS
