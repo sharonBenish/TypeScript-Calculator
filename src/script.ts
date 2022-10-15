@@ -18,6 +18,8 @@ interface isKey {
 let prevKey:isKey;
 let prevOperator:string;
 
+import {calculate} from "./calculate"
+
 calcKeys.forEach((key)=>{
     key.addEventListener('click', (e:Event)=>{
         const key = e.target as HTMLDivElement;
@@ -107,18 +109,18 @@ const reset = ()=>{
     variables = [];
 }
 
-const calculate = (var1:number, var2:number, operator:string)=>{
-    let result:number;
-    if (operator == '+'){
-        result = var1 + var2;
-    } else if (operator == '-'){
-        result = var1 - var2;
-    } else if (operator == '/'){
-        result = var1 / var2;
-    } else if (operator == 'x'){
-        result = var1 * var2;
-    } else {
-        result = 0;
-    }
-    return result
-}
+// const calculate = (var1:number, var2:number, operator:string)=>{
+//     let result:number;
+//     if (operator == '+'){
+//         result = var1 + var2;
+//     } else if (operator == '-'){
+//         result = var1 - var2;
+//     } else if (operator == '/'){
+//         result = var1 / var2;
+//     } else if (operator == 'x'){
+//         result = var1 * var2;
+//     } else {
+//         result = 0;
+//     }
+//     return result
+// }
