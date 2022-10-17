@@ -1,3 +1,5 @@
+import {calculate} from "./calculate";
+//const calculate = require("./calculate");
 const calcDisplay = document.querySelector('.calculator-display') as HTMLDivElement;
 const prevDisplay = document.querySelector('.prev-value')!;
 const currentDisplay = document.querySelector('.current-value')!;
@@ -18,7 +20,7 @@ interface isKey {
 let prevKey:isKey;
 let prevOperator:string;
 
-import {calculate} from "./calculate"
+
 
 calcKeys.forEach((key)=>{
     key.addEventListener('click', (e:Event)=>{
