@@ -1,0 +1,286 @@
+@import url("https://fonts.googleapis.com/css2?family=League+Spartan:wght@300;400;500;600;700&display=swap");
+/*THEME 1*/
+/*THEME 2*/
+/* THEME 3*/
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: "League Spartan", sans-serif;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  transition: all 0.2s ease;
+}
+
+body.theme1 {
+  background-color: hsl(222deg, 26%, 31%);
+  color: #fff;
+}
+body.theme1 .theme-toggle .radios {
+  background-color: hsl(223deg, 31%, 20%);
+}
+body.theme1 .theme-toggle .radios input:checked + .custom-radio {
+  background: hsl(6deg, 63%, 50%);
+}
+body.theme1 .calculator-display {
+  background-color: hsl(224deg, 36%, 15%);
+}
+body.theme1 .calculator-keys {
+  background-color: hsl(223deg, 31%, 20%);
+}
+body.theme1 .calculator-keys .key {
+  background-color: hsl(30deg, 25%, 89%);
+  color: hsl(221deg, 14%, 31%);
+  box-shadow: 0 5px 0 0 hsl(28deg, 16%, 65%);
+}
+body.theme1 .calculator-keys .equal {
+  background-color: hsl(6deg, 63%, 50%);
+  color: #fff;
+  box-shadow: 0 5px 0 0 hsl(6deg, 70%, 34%);
+}
+body.theme1 .calculator-keys .delete, body.theme1 .calculator-keys .reset {
+  background-color: hsl(225deg, 21%, 49%);
+  color: #fff;
+  box-shadow: 0 5px 0 0 hsl(224deg, 28%, 35%);
+}
+
+body.theme2 {
+  background-color: hsl(0deg, 0%, 90%);
+  color: hsl(60deg, 10%, 19%);
+}
+body.theme2 .calculator-display {
+  background-color: hsl(0deg, 0%, 93%);
+}
+body.theme2 .calculator-keys {
+  background-color: hsl(0deg, 5%, 81%);
+}
+body.theme2 .calculator-keys .key {
+  background-color: hsl(45deg, 7%, 89%);
+  color: hsl(60deg, 10%, 19%);
+  box-shadow: 0 5px 0 0 hsl(35deg, 11%, 61%);
+}
+body.theme2 .calculator-keys .equal {
+  background-color: hsl(25deg, 98%, 40%);
+  color: #fff;
+  box-shadow: 0 5px 0 0 hsl(25deg, 99%, 27%);
+}
+body.theme2 .calculator-keys .delete, body.theme2 .calculator-keys .reset {
+  background-color: hsl(185deg, 42%, 37%);
+  color: #fff;
+  box-shadow: 0 5px 0 0 hsl(185deg, 58%, 25%);
+}
+body.theme2 .theme-toggle .radios {
+  background-color: hsl(0deg, 5%, 81%);
+}
+body.theme2 .theme-toggle .radios input:checked + .custom-radio {
+  background: hsl(25deg, 98%, 40%);
+}
+
+body.theme3 {
+  background-color: hsl(268deg, 75%, 9%);
+  color: hsl(52deg, 100%, 62%);
+}
+body.theme3 .calculator-display {
+  background-color: hsl(268deg, 71%, 12%);
+}
+body.theme3 .calculator-keys {
+  background-color: hsl(268deg, 71%, 12%);
+}
+body.theme3 .calculator-keys .key {
+  background-color: hsl(268deg, 47%, 21%);
+  color: hsl(52deg, 100%, 62%);
+  box-shadow: 0 5px 0 0 hsl(290deg, 70%, 36%);
+}
+body.theme3 .calculator-keys .equal {
+  background-color: hsl(176deg, 100%, 44%);
+  color: hsl(198deg, 20%, 13%);
+  box-shadow: 0 5px 0 0 hsl(177deg, 92%, 70%);
+}
+body.theme3 .calculator-keys .delete, body.theme3 .calculator-keys .reset {
+  background-color: hsl(281deg, 89%, 26%);
+  color: #fff;
+  box-shadow: 0 5px 0 0 hsl(285deg, 91%, 52%);
+}
+body.theme3 .theme-toggle .radios {
+  background-color: hsl(268deg, 71%, 12%);
+}
+body.theme3 .theme-toggle .radios input:checked + .custom-radio {
+  background: hsl(176deg, 100%, 44%);
+}
+
+.container {
+  width: 100%;
+  padding: 1.5rem;
+  max-width: 500px;
+}
+
+.top-part > div:first-of-type {
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 1.8rem;
+  align-items: flex-end;
+}
+
+.calculator-display {
+  width: 100%;
+  height: 7rem;
+  border-radius: 10px;
+  margin-bottom: 1.5rem;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+  justify-content: space-between;
+  padding: 0.8rem;
+  font-size: 2rem;
+  font-weight: 600;
+}
+.calculator-display .prev-value {
+  font-size: 1.2rem;
+}
+
+.calculator-keys {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  padding: 1.5rem;
+  border-radius: 10px;
+  gap: 1rem;
+  font-weight: 700;
+}
+.calculator-keys .digit {
+  font-size: 32px;
+}
+.calculator-keys .key {
+  height: 55px;
+  border-radius: 5px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+}
+.calculator-keys .key:active {
+  transform: scale(0.98);
+}
+.calculator-keys [data-value="7"] {
+  grid-column: 1;
+  grid-row: 1;
+}
+.calculator-keys [data-value="8"] {
+  grid-column: 2;
+  grid-row: 1;
+}
+.calculator-keys [data-value="9"] {
+  grid-column: 3;
+  grid-row: 1;
+}
+.calculator-keys .delete {
+  grid-column: 4;
+  grid-row: 1;
+}
+.calculator-keys [data-value="4"] {
+  grid-column: 1;
+  grid-row: 2;
+}
+.calculator-keys [data-value="5"] {
+  grid-column: 2;
+  grid-row: 2;
+}
+.calculator-keys [data-value="6"] {
+  grid-column: 3;
+  grid-row: 2;
+}
+.calculator-keys [data-value="+"] {
+  grid-column: 4;
+  grid-row: 2;
+}
+.calculator-keys [data-value="1"] {
+  grid-column: 1;
+  grid-row: 3;
+}
+.calculator-keys [data-value="2"] {
+  grid-column: 2;
+  grid-row: 3;
+}
+.calculator-keys [data-value="3"] {
+  grid-column: 3;
+  grid-row: 3;
+}
+.calculator-keys [data-value="-"] {
+  grid-column: 4;
+  grid-row: 3;
+}
+.calculator-keys [data-value="."] {
+  grid-column: 1;
+  grid-row: 4;
+}
+.calculator-keys [data-value="0"] {
+  grid-column: 2;
+  grid-row: 4;
+}
+.calculator-keys [data-value="/"] {
+  grid-column: 3;
+  grid-row: 4;
+}
+.calculator-keys [data-value=x] {
+  grid-column: 4;
+  grid-row: 4;
+}
+.calculator-keys .reset {
+  grid-column: 1/3;
+  grid-row: 5;
+}
+.calculator-keys .equal {
+  grid-column: 3/5;
+  grid-row: 5;
+}
+
+.theme-toggle {
+  display: flex;
+  align-items: flex-end !important;
+  gap: 10px;
+}
+.theme-toggle p, .theme-toggle label {
+  font-weight: 600;
+  padding-bottom: 3px;
+}
+.theme-toggle > div {
+  display: block !important;
+  position: relative;
+}
+.theme-toggle .labels {
+  display: flex;
+  justify-content: space-between;
+  padding: 0 1rem;
+}
+.theme-toggle .radios {
+  padding: 0.5rem 1rem;
+  border-radius: 2rem;
+  display: flex;
+  justify-content: space-between;
+  gap: 10px;
+}
+.theme-toggle label, .theme-toggle input {
+  cursor: pointer;
+}
+.theme-toggle .radio {
+  position: relative;
+}
+.theme-toggle .radio input {
+  opacity: 0;
+}
+.theme-toggle .radio .custom-radio {
+  width: 13px;
+  height: 13px;
+  display: block;
+  position: absolute;
+  top: 0px;
+  border-radius: 50%;
+  background: transparent;
+  transition: background 0.35s ease;
+}
+
+/*# sourceMappingURL=/styles.3c2d4375.css.map */

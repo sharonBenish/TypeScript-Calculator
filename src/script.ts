@@ -1,3 +1,5 @@
+import {calculate} from "./calculate";
+//const calculate = require("./calculate");
 const calcDisplay = document.querySelector('.calculator-display') as HTMLDivElement;
 const prevDisplay = document.querySelector('.prev-value')!;
 const currentDisplay = document.querySelector('.current-value')!;
@@ -17,6 +19,8 @@ interface isKey {
 }
 let prevKey:isKey;
 let prevOperator:string;
+
+
 
 calcKeys.forEach((key)=>{
     key.addEventListener('click', (e:Event)=>{
@@ -107,18 +111,18 @@ const reset = ()=>{
     variables = [];
 }
 
-const calculate = (var1:number, var2:number, operator:string)=>{
-    let result:number;
-    if (operator == '+'){
-        result = var1 + var2;
-    } else if (operator == '-'){
-        result = var1 - var2;
-    } else if (operator == '/'){
-        result = var1 / var2;
-    } else if (operator == 'x'){
-        result = var1 * var2;
-    } else {
-        result = 0;
-    }
-    return result
-}
+// const calculate = (var1:number, var2:number, operator:string)=>{
+//     let result:number;
+//     if (operator == '+'){
+//         result = var1 + var2;
+//     } else if (operator == '-'){
+//         result = var1 - var2;
+//     } else if (operator == '/'){
+//         result = var1 / var2;
+//     } else if (operator == 'x'){
+//         result = var1 * var2;
+//     } else {
+//         result = 0;
+//     }
+//     return result
+// }

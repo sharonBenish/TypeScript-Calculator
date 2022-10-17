@@ -117,9 +117,34 @@ parcelRequire = (function (modules, cache, entry, globalName) {
   }
 
   return newRequire;
-})({"public/script.js":[function(require,module,exports) {
+})({"public/calculate.js":[function(require,module,exports) {
 "use strict";
 
+Object.defineProperty(exports, "__esModule", {
+  value: true
+});
+exports.calculate = void 0;
+var calculate = function calculate(var1, var2, operator) {
+  var result;
+  if (operator == '+') {
+    result = var1 + var2;
+  } else if (operator == '-') {
+    result = var1 - var2;
+  } else if (operator == '/') {
+    result = var1 / var2;
+  } else if (operator == 'x') {
+    result = var1 * var2;
+  } else {
+    result = 0;
+  }
+  return result;
+};
+exports.calculate = calculate;
+},{}],"public/script.js":[function(require,module,exports) {
+"use strict";
+
+var _calculate = require("./calculate");
+//const calculate = require("./calculate");
 var calcDisplay = document.querySelector('.calculator-display');
 var prevDisplay = document.querySelector('.prev-value');
 var currentDisplay = document.querySelector('.current-value');
@@ -156,7 +181,7 @@ calcKeys.forEach(function (key) {
           if (!prevOperator) {
             prevOperator = operator;
           }
-          result = calculate(variables[0], variables[1], prevOperator);
+          result = (0, _calculate.calculate)(variables[0], variables[1], prevOperator);
           variables = [result];
           prevDisplay.innerHTML = String(result) + " " + value;
           currentDisplay.innerHTML = "";
@@ -193,7 +218,7 @@ equalBtn.addEventListener('click', function () {
   //console.log(variables);
   variables.push(Number(displayValue));
   if (variables.length == 2) {
-    result = calculate(variables[0], variables[1], prevOperator);
+    result = (0, _calculate.calculate)(variables[0], variables[1], prevOperator);
     console.log(result);
     variables = [result];
     displayValue = String(result);
@@ -225,22 +250,22 @@ var reset = function reset() {
   operator = "";
   variables = [];
 };
-var calculate = function calculate(var1, var2, operator) {
-  var result;
-  if (operator == '+') {
-    result = var1 + var2;
-  } else if (operator == '-') {
-    result = var1 - var2;
-  } else if (operator == '/') {
-    result = var1 / var2;
-  } else if (operator == 'x') {
-    result = var1 * var2;
-  } else {
-    result = 0;
-  }
-  return result;
-};
-},{}],"../../../../usr/local/lib/node_modules/parcel-bundler/src/builtins/hmr-runtime.js":[function(require,module,exports) {
+// const calculate = (var1:number, var2:number, operator:string)=>{
+//     let result:number;
+//     if (operator == '+'){
+//         result = var1 + var2;
+//     } else if (operator == '-'){
+//         result = var1 - var2;
+//     } else if (operator == '/'){
+//         result = var1 / var2;
+//     } else if (operator == 'x'){
+//         result = var1 * var2;
+//     } else {
+//         result = 0;
+//     }
+//     return result
+// }
+},{"./calculate":"public/calculate.js"}],"../../../../usr/local/lib/node_modules/parcel-bundler/src/builtins/hmr-runtime.js":[function(require,module,exports) {
 var global = arguments[3];
 var OVERLAY_ID = '__parcel__error__overlay__';
 var OldModule = module.bundle.Module;
@@ -265,7 +290,7 @@ var parent = module.bundle.parent;
 if ((!parent || !parent.isParcelRequire) && typeof WebSocket !== 'undefined') {
   var hostname = "" || location.hostname;
   var protocol = location.protocol === 'https:' ? 'wss' : 'ws';
-  var ws = new WebSocket(protocol + '://' + hostname + ':' + "49551" + '/');
+  var ws = new WebSocket(protocol + '://' + hostname + ':' + "56387" + '/');
   ws.onmessage = function (event) {
     checkedAssets = {};
     assetsToAccept = [];

@@ -1,4 +1,5 @@
-"use strict";
+import { calculate } from "./calculate";
+//const calculate = require("./calculate");
 const calcDisplay = document.querySelector('.calculator-display');
 const prevDisplay = document.querySelector('.prev-value');
 const currentDisplay = document.querySelector('.current-value');
@@ -97,22 +98,18 @@ const reset = () => {
     operator = "";
     variables = [];
 };
-const calculate = (var1, var2, operator) => {
-    let result;
-    if (operator == '+') {
-        result = var1 + var2;
-    }
-    else if (operator == '-') {
-        result = var1 - var2;
-    }
-    else if (operator == '/') {
-        result = var1 / var2;
-    }
-    else if (operator == 'x') {
-        result = var1 * var2;
-    }
-    else {
-        result = 0;
-    }
-    return result;
-};
+// const calculate = (var1:number, var2:number, operator:string)=>{
+//     let result:number;
+//     if (operator == '+'){
+//         result = var1 + var2;
+//     } else if (operator == '-'){
+//         result = var1 - var2;
+//     } else if (operator == '/'){
+//         result = var1 / var2;
+//     } else if (operator == 'x'){
+//         result = var1 * var2;
+//     } else {
+//         result = 0;
+//     }
+//     return result
+// }
